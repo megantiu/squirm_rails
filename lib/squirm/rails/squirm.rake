@@ -2,7 +2,7 @@ namespace :db do
   namespace :functions do
     task :load => :environment do
       functions = File.read(Rails.root.join("db", "functions.sql"))
-      ActiveRecord::Base.connection.raw_connection.execute functions
+      ActiveRecord::Base.connection.raw_connection functions
     end
   end
 
